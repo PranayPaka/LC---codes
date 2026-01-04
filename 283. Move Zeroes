@@ -1,0 +1,16 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int position = 0; // where next non-zero should go
+
+        for (int current = 0; current < nums.length; current++) {
+            if (nums[current] != 0) {
+                // swap current element with the position
+                int temp = nums[position];
+                nums[position] = nums[current];
+                nums[current] = temp;
+
+                position++; // move to next position
+            }
+        }
+    }
+}
